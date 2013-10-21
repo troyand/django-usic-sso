@@ -11,7 +11,7 @@ Installation
 
 2. Set AUTHENTICATION_BACKENDS to::
 
-   AUTHENTICATION_BACKENDS = ('django_usic_sso.backends.RedisCookieBackend',)
+    AUTHENTICATION_BACKENDS = ('django_usic_sso.backends.RedisCookieBackend',)
 
 3. Configure Redis server::
 
