@@ -32,3 +32,9 @@ Installation
 6. Add login view to Django urls.py::
 
    url(r'^accounts/login/$', 'django_usic_sso.views.login', name='login'),
+
+5. Tests::
+
+    $ pip install django nose redis
+    # Make sure you have redis running on localhost:6379
+    $ nosetests
