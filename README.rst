@@ -7,7 +7,7 @@ Authentication backend for Django that utilizes USIC Redis SSO cookie.
 Installation
 ------------
 
-1. Run ``pip install ...``.
+1. Run ``pip install -e git+https://github.com/troyand/django-usic-sso.git#egg=django_usic_sso``.
 
 2. Set AUTHENTICATION_BACKENDS to::
 
