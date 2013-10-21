@@ -15,26 +15,20 @@ Installation
 
 3. Configure Redis server::
 
-   SSO_REDIS_HOST = '127.0.0.1'
-   SSO_REDIS_PORT = 6379
-   SSO_REDIS_DB = 0
-   SSO_REDIS_PASSWORD = ''
+    SSO_REDIS_HOST = '127.0.0.1'
+    SSO_REDIS_PORT = 6379
+    SSO_REDIS_DB = 0
+    SSO_REDIS_PASSWORD = ''
 
 4. Configure cookie name and prefix::
 
-   SSO_COOKIE_NAME = 'PHPSESSID'
-   SSO_COOKIE_PREFIX = 'usic.at'
+    SSO_COOKIE_NAME = 'PHPSESSID'
+    SSO_COOKIE_PREFIX = 'usic.at'
 
 5. Configure SSO login url::
 
-   SSO_URL = 'https://my.usic.at/'
+    SSO_URL = 'https://my.usic.at/'
 
 6. Add login view to Django urls.py::
 
-   url(r'^accounts/login/$', 'django_usic_sso.views.login', name='login'),
-
-5. Tests::
-
-    $ pip install django nose redis
-    # Make sure you have redis running on localhost:6379
-    $ nosetests
+    url(r'^accounts/login/$', 'django_usic_sso.views.login', name='login'),
