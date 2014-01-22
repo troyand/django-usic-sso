@@ -45,6 +45,6 @@ def login(request, redirect_field_name=REDIRECT_FIELD_NAME):
         return redirect(sso_redirect_url)
 
 def logout(request):
-    sso_redirect_url = '%slogout'
+    sso_redirect_url = '%slogout' % settings.SSO_URL
     auth_logout(request)
     return redirect(sso_redirect_url)
