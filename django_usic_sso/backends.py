@@ -27,12 +27,14 @@ class RedisCookieBackend(object):
                 if isinstance(val, str):
                     user_data[key] = val.decode('utf8')
             try:
+                if 'login' not in user_data:
+                    return None
                 user = User.objects.get(username=user_data['login'])
             except User.DoesNotExist:
                 user = User(username=user_data['login'])
-            user.first_name = user_data['name']
-            user.last_name = user_data['surname']
-            user.email = user_data['email']
+            user.first_name = user_data.get('name', '')
+            user.last_name = user_data.get('surname', '')
+            user.email = user_data.get('email')
             user.save()
             return user
         else:
@@ -43,4 +45,4 @@ class RedisCookieBackend(object):
             return User.objects.get(pk=user_id)
         except User.DoesNotExist:
             return None
-            
+
