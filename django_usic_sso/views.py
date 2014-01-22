@@ -2,7 +2,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 from django.conf import settings
-from django.contrib.auth import REDIRECT_FIELD_NAME, authenticate, login as auth_login
+from django.contrib.auth import REDIRECT_FIELD_NAME, authenticate, login as auth_login, logout as auth_logout
 from django.shortcuts import redirect, resolve_url
 from django.utils.http import is_safe_url
 from urllib import urlencode
@@ -46,4 +46,5 @@ def login(request, redirect_field_name=REDIRECT_FIELD_NAME):
 
 def logout(request):
     sso_redirect_url = '%slogout'
+    auth_login(request)
     return redirect(sso_redirect_url)
