@@ -45,7 +45,5 @@ def login(request, redirect_field_name=REDIRECT_FIELD_NAME):
         return redirect(sso_redirect_url)
 
 def logout(request):
-    sso_redirect_url = '%slogout?%s' % (settings.SSO_URL, urlencode({
-        'from': request.build_absolute_uri()
-        }))
+    sso_redirect_url = '%slogout'
     return redirect(sso_redirect_url)
