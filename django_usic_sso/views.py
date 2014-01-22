@@ -17,7 +17,7 @@ def login(request, redirect_field_name=REDIRECT_FIELD_NAME):
     Security checks are based on code from
     django.contrib.auth.views.login
     """
-    sso_redirect_url = '%s?%s' % (settings.SSO_URL, urlencode({
+    sso_redirect_url = '%slogin?%s' % (settings.SSO_URL, urlencode({
         'from': request.build_absolute_uri()
         }))
     redirect_to = request.POST.get(redirect_field_name,
@@ -44,3 +44,8 @@ def login(request, redirect_field_name=REDIRECT_FIELD_NAME):
                       settings.SSO_COOKIE_NAME, sso_redirect_url)
         return redirect(sso_redirect_url)
 
+def logout(request):
+    sso_redirect_url = '%slogout?%s' % (settings.SSO_URL, urlencode({
+        'from': request.build_absolute_uri()
+        }))
+    return redirect(sso_redirect_url)

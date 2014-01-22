@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='django-usic-sso',
-    version='0.2.2',
+    version='0.2.3',
     author='Mykhailo Troianovskyi',
     author_email='troyanovsky@gmail.com',
     packages=['django_usic_sso',],
